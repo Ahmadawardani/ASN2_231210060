@@ -14,49 +14,54 @@ class AnggotaController extends Controller
 
     public function index()
     {
-        // Menampilkan semua anggota
+        // Mengirim array asli, index view pakai array syntax
         return view('anggota.index', ['anggota' => $this->anggota]);
     }
 
     public function create()
     {
-        // Menampilkan form untuk menambah anggota baru
         return view('anggota.create');
     }
 
     public function store(Request $request)
     {
-        // Menyimpan anggota baru
+        // Simulasi menyimpan (tidak persist)
         $id = count($this->anggota) + 1;
         $this->anggota[$id] = $request->only(['nim', 'nama', 'jabatan']);
-        
-        // Redirect ke halaman daftar anggota
+
         return redirect()->route('anggota.index');
     }
 
     public function show($id)
     {
-        // Menampilkan detail anggota berdasarkan ID
-        if (isset($this->anggota[$id])) {
-            return view('anggota.show', ['anggota' => $this->anggota[$id]]);
+        if (! isset($this->anggota[$id])) {
+            return redirect()->route('anggota.index');
         }
 
-        return redirect()->route('anggota.index');
+        // Ambil data array, tambahkan id, lalu cast ke object
+        $data = $this->anggota[$id];
+        $data['id'] = $id;
+        $anggota = (object) $data;
+
+        return view('anggota.show', compact('anggota'));
     }
 
     public function edit($id)
     {
-        // Menampilkan form edit anggota
-        if (isset($this->anggota[$id])) {
-            return view('anggota.edit', ['anggota' => $this->anggota[$id]]);
+        if (! isset($this->anggota[$id])) {
+            return redirect()->route('anggota.index');
         }
 
-        return redirect()->route('anggota.index');
+        // Ambil data array, tambahkan id, lalu cast ke object
+        $data = $this->anggota[$id];
+        $data['id'] = $id;
+        $anggota = (object) $data;
+
+        return view('anggota.edit', compact('anggota'));
     }
 
     public function update(Request $request, $id)
     {
-        // Memperbarui data anggota
         if (isset($this->anggota[$id])) {
             $this->anggota[$id] = $request->only(['nim', 'nama', 'jabatan']);
         }
@@ -66,17 +71,20 @@ class AnggotaController extends Controller
 
     public function confirmDelete($id)
     {
-        // Menampilkan konfirmasi untuk menghapus anggota
-        if (isset($this->anggota[$id])) {
-            return view('anggota.confirmDelete', ['anggota' => $this->anggota[$id]]);
+        if (! isset($this->anggota[$id])) {
+            return redirect()->route('anggota.index');
         }
 
-        return redirect()->route('anggota.index');
+        // Ambil data array, tambahkan id, lalu cast ke object
+        $data = $this->anggota[$id];
+        $data['id'] = $id;
+        $anggota = (object) $data;
+
+        return view('anggota.confirmDelete', compact('anggota'));
     }
 
     public function destroy($id)
     {
-        // Menghapus anggota berdasarkan ID
         if (isset($this->anggota[$id])) {
             unset($this->anggota[$id]);
         }

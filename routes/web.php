@@ -10,3 +10,6 @@ Route::get('/anggota/{id}/edit', [AnggotaController::class, 'edit'])->name('angg
 Route::put('/anggota/{id}', [AnggotaController::class, 'update'])->name('anggota.update');
 Route::get('/anggota/{id}/delete', [AnggotaController::class, 'confirmDelete'])->name('anggota.confirmDelete');
 Route::delete('/anggota/{id}', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+Route::get('/', function () {
+    return view('home');
+});
