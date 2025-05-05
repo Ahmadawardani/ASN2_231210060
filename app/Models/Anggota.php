@@ -2,18 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Anggota extends Model
 {
-    use HasFactory;
+    protected $table = 'anggota'; // Pastikan nama tabel sesuai dengan di database
+    protected $fillable = ['nim', 'nama', 'jabatan'];
 
-    protected $table = 'anggota';
+    public function divisi()
+{
+    return $this->belongsTo(Divisi::class);
+}
 
-    protected $fillable = [
-        'nim',
-        'nama',
-        'jabatan',
-    ];
+public function jabatan()
+{
+    return $this->belongsTo(Jabatan::class);
+}
+    
 }

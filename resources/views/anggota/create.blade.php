@@ -1,7 +1,4 @@
-@extends('layouts.app')
-
-@section('title', 'Tambah Anggota')
-
+@extends('layouts.app') 
 @section('content')
 <section class="section" id="anggota-create">
     <div class="container">

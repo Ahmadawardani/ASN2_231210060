@@ -10,6 +10,21 @@ Route::get('/anggota/{id}/edit', [AnggotaController::class, 'edit'])->name('angg
 Route::put('/anggota/{id}', [AnggotaController::class, 'update'])->name('anggota.update');
 Route::get('/anggota/{id}/delete', [AnggotaController::class, 'confirmDelete'])->name('anggota.confirmDelete');
 Route::delete('/anggota/{id}', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+Route::get('/divisi', function () {
+    return view('divisi');  // Mengarah ke view divisi.blade.php
+})->name('divisi.index');
+Route::get('/kegiatan', function () {
+    return view('kegiatan');  // Mengarah ke view kegiatan.blade.php
+})->name('kegiatan.index');
+Route::get('/berita', function () {
+    return view('berita');
+})->name('berita.index');
+Route::get('/kepanitiaan', function () {
+    return view('kepanitiaan');
+})->name('kepanitiaan.index');
+Route::get('/kontak', function () {
+    return view('kontak');
+})->name('kontak.index');
 Route::get('/', function () {
     return view('home');
 });
