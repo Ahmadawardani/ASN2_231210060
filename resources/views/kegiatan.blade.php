@@ -1,50 +1,115 @@
 @extends('layouts.app')
 
-@section('title', 'Kegiatan - HMPS SI')
+@section('title', 'Kegiatan - Himpunan Mahasiswa Program Studi Sistem Informasi')
 
 @section('content')
-    <section class="section py-5" id="kegiatan">
-        <div class="container">
-            <h3 class="text-center mb-4">Kegiatan HMPS SI</h3>
-
-            <!-- Kegiatan 1 -->
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <h4>Kegiatan 1: Pelatihan Anggota</h4>
-                    <p>Deskripsi kegiatan yang dilakukan, tujuan kegiatan, tanggal, dan lokasi.</p>
-                    <p><strong>Tanggal:</strong> 1 Januari 2025</p>
-                    <p><strong>Tempat:</strong> Aula Kampus</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="{{ asset('images/kegiatan1.jpg') }}" class="img-fluid rounded" alt="Kegiatan 1">
-                </div>
-            </div>
-
-            <!-- Kegiatan 2 -->
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <h4>Kegiatan 2: Seminar Teknologi Informasi</h4>
-                    <p>Deskripsi kegiatan yang dilakukan, tujuan kegiatan, tanggal, dan lokasi.</p>
-                    <p><strong>Tanggal:</strong> 15 Februari 2025</p>
-                    <p><strong>Tempat:</strong> Ruang Seminar Fakultas Teknologi Informasi</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="{{ asset('images/kegiatan2.jpg') }}" class="img-fluid rounded" alt="Kegiatan 2">
-                </div>
-            </div>
-
-            <!-- Kegiatan 3 -->
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <h4>Kegiatan 3: Lomba Coding</h4>
-                    <p>Deskripsi kegiatan yang dilakukan, tujuan kegiatan, tanggal, dan lokasi.</p>
-                    <p><strong>Tanggal:</strong> 20 Maret 2025</p>
-                    <p><strong>Tempat:</strong> Laboratorium Komputer</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="{{ asset('images/kegiatan3.jpg') }}" class="img-fluid rounded" alt="Kegiatan 3">
-                </div>
-            </div>
+<section class="section py-5 bg-light" id="kegiatan">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-maroon">Kegiatan</h2>
+            <p class="lead text-muted">Lihat berbagai kegiatan yang telah dilakukan oleh Himpunan Mahasiswa Program Studi Sistem Informasi.</p>
         </div>
-    </section>
+
+        <div class="row">
+            @foreach ($kegiatan as $item)
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-lg border-0 h-100 custom-card">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-maroon">{{ $item->nama_kegiatan }}</h5>
+                            <p class="card-text text-muted">{{ $item->deskripsi }}</p>
+                            <p class="card-text"><small class="text-muted">Tanggal: {{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</small></p>
+                            <p class="card-text"><small class="text-muted">Tempat: {{ $item->tempat }}</small></p>
+                        
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="{{ route('kegiatan.edit', $item->id) }}" class="btn btn-sm btn-warning custom-btn">Edit</a>
+                                <form action="{{ route('kegiatan.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus kegiatan ini?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger custom-btn">Hapus</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="text-center mb-4">
+            <a href="{{ route('kegiatan.create') }}" class="btn btn-lg btn-maroon custom-btn">+ Tambah Kegiatan</a>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Warna Merah Maroon yang Elegan */
+    .text-maroon {
+        color: #800000;
+    }
+
+    /* Tombol yang Modern dengan Efek */
+    .custom-btn {
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .custom-btn:hover {
+        background-color: #800000;
+        color: white;
+        border-color: #800000;
+        transform: scale(1.1);
+    }
+
+    /* Desain Card yang Lebih Modern */
+    .custom-card {
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .custom-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Card Title yang Bold */
+    .card-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #800000;
+    }
+
+    /* Teks dalam Card Lebih Rapi */
+    .card-text {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* Tombol Tambah Kegiatan */
+    .btn-maroon {
+        background-color: #800000;
+        color: white;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-maroon:hover {
+        background-color: #a50000;
+        color: white;
+    }
+
+    /* Efek Bayangan pada Card */
+    .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Section Padding yang Rapi */
+    .section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+</style>
+
 @endsection
