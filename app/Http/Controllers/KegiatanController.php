@@ -15,7 +15,7 @@ class KegiatanController extends Controller
 
     public function create()
 {
-    return view('kegiatan_create'); // buat file blade-nya nanti
+    return view('kegiatan_create'); 
 }
 
 public function store(Request $request)

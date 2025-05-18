@@ -26,7 +26,7 @@
     <a class="nav-link" href="{{ route('berita.index') }}">Berita</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('kepanitiaan.index') }}">Kepanitiaan</a>
+    <a class="nav-link" href="{{ route('struktur_panitia.index') }}">Kepanitiaan</a>
 </li>
              </ul>
          </div>

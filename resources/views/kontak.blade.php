@@ -36,12 +36,11 @@
 </section>
 
 <style>
-    /* Nuansa Merah Maroon dan Efek pada Teks */
+
     .text-maroon {
         color: #800000;
     }
 
-    /* Desain Tombol */
     .custom-btn {
         border-radius: 30px;
         transition: all 0.3s ease;
@@ -54,7 +53,7 @@
         transform: scale(1.1);
     }
 
-    /* Card Custom dengan Bayangan */
+
     .custom-card {
         border-radius: 20px;
         transition: all 0.3s ease;
@@ -65,19 +64,18 @@
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     }
 
-    /* Efek Hover pada Ikon */
     .icon-hover:hover {
         transform: rotate(360deg);
         color: #800000;
         transition: all 0.5s ease;
     }
 
-    /* Efek Hover pada Card */
+
     .card:hover {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
-    /* Teks yang Lebih Elegan */
+
     .card-title {
         font-weight: 600;
         font-size: 1.2rem;
@@ -88,13 +86,11 @@
         line-height: 1.5;
     }
 
-    /* Padding untuk Jarak Lebih Rapi */
+
     .section {
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
-
-    /* Teks Centered pada Header */
     .text-center {
         text-align: center;
         font-weight: 700;

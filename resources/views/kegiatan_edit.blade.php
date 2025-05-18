@@ -37,7 +37,6 @@
 </div>
 
 <style>
-    /* Warna Maroon untuk Teks dan Tombol */
     .text-maroon {
         color: #800000;
     }
@@ -54,7 +53,7 @@
         color: white;
     }
 
-    /* Desain Form dengan Bayangan dan Sudut Melengkung */
+
     form {
         border-radius: 15px;
         background-color: #f9f9f9;
@@ -62,13 +61,13 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Label dengan Ukuran Font Lebih Besar dan Tebal */
+
     .form-label {
         font-size: 1rem;
         font-weight: 600;
     }
 
-    /* Input dan Textarea dengan Fokus yang Menonjol */
+
     input[type="text"], input[type="date"], textarea {
         border-radius: 10px;
         border: 1px solid #ddd;
@@ -82,13 +81,11 @@
         box-shadow: 0 0 5px rgba(128, 0, 0, 0.3);
     }
 
-    /* Tombol Batal dengan Efek Hover */
+
     .btn-outline-secondary:hover {
         background-color: #f8f9fa;
         color: #800000;
     }
-
-    /* Menambahkan Margin dan Padding pada Form */
     .container {
         margin-top: 3rem;
     }

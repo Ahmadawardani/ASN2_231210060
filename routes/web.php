@@ -3,6 +3,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\StrukturPanitiaController;
+use App\Http\Controllers\BeritaController;
+
 
 Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota.index');
 Route::get('/anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
@@ -24,12 +27,8 @@ Route::get('/divisi/{id}/edit', [DivisiController::class, 'edit'])->name('divisi
 Route::put('/divisi/{id}', [DivisiController::class, 'update'])->name('divisi.update');
 Route::get('/divisi/create', [DivisiController::class, 'create'])->name('divisi_create');
 Route::delete('/divisi/{id}', [DivisiController::class, 'destroy'])->name('divisi_destroy');
-Route::get('/berita', function () {
-    return view('berita');
-})->name('berita.index');
-Route::get('/kepanitiaan', function () {
-    return view('kepanitiaan');
-})->name('kepanitiaan.index');
+Route::resource('struktur_panitia', StrukturPanitiaController::class);
+Route::resource('berita', BeritaController::class);
 Route::get('/kontak', function () {
     return view('kontak');
 })->name('kontak.index');

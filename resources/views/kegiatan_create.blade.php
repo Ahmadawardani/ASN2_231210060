@@ -36,12 +36,12 @@
 </div>
 
 <style>
-    /* Warna Merah Maroon yang Elegan */
+
     .text-maroon {
         color: #800000;
     }
 
-    /* Tombol dengan Warna Merah Maroon */
+ 
     .btn-maroon {
         background-color: #800000;
         color: white;
@@ -54,7 +54,7 @@
         color: white;
     }
 
-    /* Desain Form dengan Efek Bayangan */
+
     form {
         border-radius: 15px;
         background-color: #f9f9f9;
@@ -62,13 +62,12 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Label dengan Font yang Lebih Tebal */
     .form-label {
         font-size: 1rem;
         font-weight: 600;
     }
 
-    /* Ukuran Input yang Lebih Rapi */
+
     input[type="text"], input[type="date"], textarea {
         border-radius: 10px;
         border: 1px solid #ddd;
@@ -82,13 +81,13 @@
         box-shadow: 0 0 5px rgba(128, 0, 0, 0.3);
     }
 
-    /* Tombol Kembali dengan Efek Hover */
+
     .btn-outline-secondary:hover {
         background-color: #f8f9fa;
         color: #800000;
     }
 
-    /* Margin dan Padding yang Rapi */
+
     .container {
         margin-top: 3rem;
     }

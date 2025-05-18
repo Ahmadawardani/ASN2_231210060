@@ -26,7 +26,7 @@
 </div>
 
 <style>
-    /* Nuansa Merah Maroon */
+
     .text-maroon {
         color: #800000;
     }
@@ -41,7 +41,7 @@
         border-color: #9e1a1a;
     }
 
-    /* Tombol Hover dan Gaya Umum */
+
     .btn-secondary:hover {
         background-color: #6c757d;
     }

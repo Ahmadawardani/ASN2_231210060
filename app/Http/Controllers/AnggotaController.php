@@ -20,14 +20,13 @@ class AnggotaController extends Controller
 
     public function store(Request $request)
     {
-        // Validasi (opsional tapi disarankan)
+
         $request->validate([
             'nim' => 'required',
             'nama' => 'required',
             'jabatan' => 'required',
         ]);
 
-        // Simpan ke database
         Anggota::create($request->only(['nim', 'nama', 'jabatan']));
 
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil ditambahkan!');

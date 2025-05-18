@@ -42,12 +42,10 @@
 </section>
 
 <style>
-    /* Warna Merah Maroon yang Elegan */
     .text-maroon {
         color: #800000;
     }
 
-    /* Tombol yang Modern dengan Efek */
     .custom-btn {
         border-radius: 25px;
         transition: all 0.3s ease;
@@ -60,7 +58,6 @@
         transform: scale(1.1);
     }
 
-    /* Desain Card yang Lebih Modern */
     .custom-card {
         border-radius: 15px;
         transition: all 0.3s ease;
@@ -71,21 +68,21 @@
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
-    /* Card Title yang Bold */
+
     .card-title {
         font-size: 1.3rem;
         font-weight: 600;
         color: #800000;
     }
 
-    /* Teks dalam Card Lebih Rapi */
+
     .card-text {
         font-size: 1rem;
         color: #555;
         line-height: 1.5;
     }
 
-    /* Tombol Tambah Kegiatan */
+
     .btn-maroon {
         background-color: #800000;
         color: white;
@@ -98,14 +95,14 @@
         color: white;
     }
 
-    /* Efek Bayangan pada Card */
+
     .card {
         border: none;
         border-radius: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Section Padding yang Rapi */
+
     .section {
         padding-top: 4rem;
         padding-bottom: 4rem;
