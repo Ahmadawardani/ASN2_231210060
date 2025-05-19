@@ -16,7 +16,7 @@
                     <div class="card shadow-lg border-0 h-100 custom-card">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-maroon">{{ $item->nama_kegiatan }}</h5>
-                            <p class="card-text text-muted">{{ $item->deskripsi }}</p>
+                            <p class="card-text text-muted">{!! nl2br(e($item->deskripsi)) !!}</p>
                             <p class="card-text"><small class="text-muted">Tanggal: {{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</small></p>
                             <p class="card-text"><small class="text-muted">Tempat: {{ $item->tempat }}</small></p>
                         

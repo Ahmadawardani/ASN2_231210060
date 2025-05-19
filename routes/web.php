@@ -27,7 +27,7 @@ Route::get('/divisi/{id}/edit', [DivisiController::class, 'edit'])->name('divisi
 Route::put('/divisi/{id}', [DivisiController::class, 'update'])->name('divisi.update');
 Route::get('/divisi/create', [DivisiController::class, 'create'])->name('divisi_create');
 Route::delete('/divisi/{id}', [DivisiController::class, 'destroy'])->name('divisi_destroy');
-Route::resource('struktur_panitia', StrukturPanitiaController::class);
+Route::resource('struktur_panitia', StrukturPanitiaController::class)->parameters(['struktur_panitia' => 'struktur_panitia']);;
 Route::resource('berita', BeritaController::class);
 Route::get('/kontak', function () {
     return view('kontak');
