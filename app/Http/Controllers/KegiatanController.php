@@ -28,8 +28,9 @@ public function store(Request $request)
     ]);
 
     Kegiatan::create($request->all());
+    return redirect()->route('kegiatan.index')->with('success', 'kegiatan berhasil ditambahkan!');
 
-    return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil ditambahkan.');
+
 }
 
 public function edit($id)
@@ -49,16 +50,16 @@ public function update(Request $request, $id)
 
     $kegiatan = Kegiatan::findOrFail($id);
     $kegiatan->update($request->all());
-
     return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil diperbarui!');
+
 }
 
 public function destroy($id)
 {
     $kegiatan = Kegiatan::findOrFail($id);
     $kegiatan->delete();
+    return redirect()->route('kegiatan.index')->with('success', 'kegiatan berhasil dihapus!');
 
-    return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil dihapus!');
 }
 
 }

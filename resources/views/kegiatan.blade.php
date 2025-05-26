@@ -4,6 +4,12 @@
 
 @section('content')
 <section class="section py-5 bg-light" id="kegiatan">
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold text-maroon">Kegiatan</h2>

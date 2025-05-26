@@ -27,7 +27,8 @@ class BeritaController extends Controller
         ]);
 
         Berita::create($request->all());
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan');
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan!');
+
     }
 
     public function edit($id)
@@ -46,7 +47,8 @@ class BeritaController extends Controller
 
         $berita = Berita::findOrFail($id);
         $berita->update($request->all());
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui');
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui!');
+
     }
 
     public function show($id)
@@ -59,6 +61,7 @@ class BeritaController extends Controller
     public function destroy($id)
     {
         Berita::destroy($id);
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus');
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus!');
+
     }
 }

@@ -5,6 +5,12 @@
 @section('content')
 <section class="section" id="anggota" style="background-color: #fdfcfc;">
     <div class="container py-5">
+        @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
         <div class="row justify-content-center mb-4">
             <div class="col-lg-10 text-center">
                 <h2 class="section-title text-uppercase fw-bold" style="color: #6b0f1a;">Daftar Anggota HMPS - Sistem Informasi</h2>

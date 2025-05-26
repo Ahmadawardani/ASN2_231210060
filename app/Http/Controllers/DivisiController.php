@@ -26,8 +26,9 @@ class DivisiController extends Controller
         ]);
 
         Divisi::create($request->all());
+        return redirect()->route('divisi.index')->with('success', 'Divisi berhasil ditambahkan!');
 
-        return redirect()->route('divisi.index')->with('success', 'Divisi berhasil ditambahkan.');
+
     }
 
     public function edit($id)
@@ -46,15 +47,16 @@ class DivisiController extends Controller
         ]);
 
         $divisi->update($request->all());
+        return redirect()->route('divisi.index')->with('success', 'Divisi berhasil diperbarui!');
 
-        return redirect()->route('divisi.index')->with('success', 'Divisi berhasil diperbarui.');
+
     }
 
     public function destroy($id)
     {
         $divisi = Divisi::findOrFail($id);
         $divisi->delete();
+        return redirect()->route('divisi.index')->with('success', 'Divisi berhasil dihapus!');
 
-        return redirect()->route('divisi.index')->with('success', 'Divisi berhasil dihapus.');
     }
 }

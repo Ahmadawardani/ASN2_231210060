@@ -28,7 +28,6 @@ class AnggotaController extends Controller
         ]);
 
         Anggota::create($request->only(['nim', 'nama', 'jabatan']));
-
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil ditambahkan!');
     }
 
@@ -54,8 +53,8 @@ class AnggotaController extends Controller
 
         $anggota = Anggota::findOrFail($id);
         $anggota->update($request->only(['nim', 'nama', 'jabatan']));
-
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil diperbarui!');
+
     }
 
     public function confirmDelete($id)
@@ -68,7 +67,7 @@ class AnggotaController extends Controller
     {
         $anggota = Anggota::findOrFail($id);
         $anggota->delete();
-
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil dihapus!');
     }
+
 }

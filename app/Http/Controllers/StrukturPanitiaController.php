@@ -38,8 +38,9 @@ class StrukturPanitiaController extends Controller
             'sie_perlengkapan' => explode(',', $request->sie_perlengkapan),
             'sie_konsumsi' => explode(',', $request->sie_konsumsi),
         ]);
+        return redirect()->route('struktur_panitia.index')->with('success', 'Satruktur Panitia berhasil ditambahkan!');
 
-        return redirect()->route('struktur_panitia.index')->with('success', 'Struktur panitia berhasil ditambahkan.');
+        
     }
 
     public function show(StrukturPanitia $struktur_panitia)
@@ -67,13 +68,16 @@ class StrukturPanitiaController extends Controller
             'sie_perlengkapan' => explode(',', $request->sie_perlengkapan),
             'sie_konsumsi' => explode(',', $request->sie_konsumsi),
         ]);
+        return redirect()->route('struktur_pantia.index')->with('success', 'Struktur Panitia berhasil diperbarui!');
 
-        return redirect()->route('struktur_panitia.index')->with('success', 'Struktur panitia berhasil diperbarui.');
+
+        
     }
 
     public function destroy(StrukturPanitia $struktur_panitia)
     {
         $struktur_panitia->delete();
-        return redirect()->route('struktur_panitia.index')->with('success', 'Struktur panitia berhasil dihapus.');
+        return redirect()->route('struktur_panitia.index')->with('success', 'Struktur Panitia berhasil dihapus!');
+
     }
 }

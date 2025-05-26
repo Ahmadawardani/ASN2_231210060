@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container py-5">
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold" style="color: #800000;">📢 Daftar Berita & Artikel</h2>
         <a href="{{ route('berita.create') }}" class="btn btn-outline-danger rounded-pill px-4 shadow-sm">
