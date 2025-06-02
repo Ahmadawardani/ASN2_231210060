@@ -52,6 +52,13 @@ class DivisiController extends Controller
 
     }
 
+    public function showDivisi($id)
+    {
+        $divisi = Divisi::with('anggota')->findOrFail($id);
+        return view('divisi.show', compact('divisi'));
+    }
+
+
     public function destroy($id)
     {
         $divisi = Divisi::findOrFail($id);

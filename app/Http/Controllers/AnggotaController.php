@@ -9,8 +9,9 @@ class AnggotaController extends Controller
 {
     public function index()
     {
-        $anggota = Anggota::all();
-        return view('anggota.index', compact('anggota'));
+        $anggota = Anggota::orderBy('id', 'desc')->paginate(10);
+        $totalAnggota = Anggota::count();
+        return view('anggota.index', compact('anggota', 'totalAnggota'));
     }
 
     public function create()

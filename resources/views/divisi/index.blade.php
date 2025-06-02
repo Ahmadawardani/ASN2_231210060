@@ -28,6 +28,7 @@
                         <td>{!! nl2br(e($item->deskripsi)) !!}</td>
                         <td>
                             <a href="{{ route('divisi_edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{{ route('divisi.show', $item->id) }}" class="btn btn-outline-primary">Lihat Detail</a>
                             <form action="{{ route('divisi_destroy', $item->id) }}" method="POST" style="display:inline-block;">
                                 @csrf @method('DELETE')
                                 <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin hapus?')">Hapus</button>

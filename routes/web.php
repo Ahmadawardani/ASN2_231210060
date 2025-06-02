@@ -5,8 +5,10 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\StrukturPanitiaController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\AnggotaKegiatanController;
 
 
+Route::resource('anggota_kegiatan', AnggotaKegiatanController::class);
 Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota.index');
 Route::get('/anggota/create', [AnggotaController::class, 'create'])->name('anggota.create');
 Route::post('/anggota', [AnggotaController::class, 'store'])->name('anggota.store');
@@ -27,6 +29,7 @@ Route::get('/divisi/{id}/edit', [DivisiController::class, 'edit'])->name('divisi
 Route::put('/divisi/{id}', [DivisiController::class, 'update'])->name('divisi.update');
 Route::get('/divisi/create', [DivisiController::class, 'create'])->name('divisi_create');
 Route::delete('/divisi/{id}', [DivisiController::class, 'destroy'])->name('divisi_destroy');
+Route::get('/divisi/{id}', [DivisiController::class, 'showDivisi'])->name('divisi.show');
 Route::resource('struktur_panitia', StrukturPanitiaController::class)->parameters(['struktur_panitia' => 'struktur_panitia']);;
 Route::resource('berita', BeritaController::class);
 Route::get('/kontak', function () {

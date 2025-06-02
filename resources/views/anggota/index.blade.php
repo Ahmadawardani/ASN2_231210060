@@ -15,6 +15,7 @@
             <div class="col-lg-10 text-center">
                 <h2 class="section-title text-uppercase fw-bold" style="color: #6b0f1a;">Daftar Anggota HMPS - Sistem Informasi</h2>
                 <p class="text-muted fst-italic">Berikut adalah daftar anggota aktif beserta jabatan mereka dalam organisasi.</p>
+                <p class="fw-bold text-dark">Total Anggota Aktif: {{ $totalAnggota }}</p>
                 <a href="{{ route('anggota.create') }}" class="btn btn-maroon mt-3 shadow-sm rounded-pill px-4 py-2">
                     <i class="fas fa-user-plus me-1"></i> Tambah Anggota
                 </a>

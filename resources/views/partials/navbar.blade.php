@@ -28,6 +28,10 @@
 <li class="nav-item">
     <a class="nav-link" href="{{ route('struktur_panitia.index') }}">Kepanitiaan</a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('anggota_kegiatan.index') }}">Anggota Kegiatan</a>
+</li>
+
              </ul>
          </div>
      </div>

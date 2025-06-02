@@ -28,6 +28,8 @@
                 ['icon' => 'fas fa-network-wired', 'color' => 'maroon', 'title' => 'Divisi', 'desc' => 'Kenali struktur divisi yang ada di dalam HMPS SI dan fungsinya masing-masing.', 'route' => 'divisi.index', 'btn' => 'dark'],
                 ['icon' => 'fas fa-newspaper', 'color' => 'maroon', 'title' => 'Berita / Artikel', 'desc' => 'Baca berita terkini dan artikel menarik seputar dunia mahasiswa dan teknologi.', 'route' => 'berita.index', 'btn' => 'dark'],
                 ['icon' => 'fas fa-sitemap', 'color' => 'maroon', 'title' => 'Struktur Kepanitiaan', 'desc' => 'Lihat susunan panitia kegiatan dan siapa saja yang terlibat dalam organisasi.', 'route' => 'struktur_panitia.index', 'btn' => 'dark'],
+                ['icon' => 'fas fa-user-check', 'color' => 'maroon', 'title' => 'Anggota Kegiatan', 'desc' => 'Lihat daftar anggota yang terlibat dalam kegiatan tertentu.', 'route' => 'anggota_kegiatan.index', 'btn' => 'dark'],
+
 
             ];
         @endphp

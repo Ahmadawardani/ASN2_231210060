@@ -8,4 +8,9 @@ class Anggota extends Model
 {
     protected $table = 'anggota';
     protected $fillable = ['nim', 'nama', 'jabatan'];
+
+    public function divisi() {
+    return $this->belongsTo(Divisi::class);
+    }
+
 }
